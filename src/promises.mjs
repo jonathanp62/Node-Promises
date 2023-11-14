@@ -11,12 +11,16 @@
  * The promises (introduction) class. Note that
  * setTimeout is used to simulate asynchronous
  * execution.
+ *
+ * See: https://www.javascripttutorial.net/es6/javascript-promises/
  */
 class Promises {
     /**
      * The run method.
      */
     run() {
+        console.log('-- Introduction --');
+
         this.justResolved();
         this.resolvedAndReject()
     }
