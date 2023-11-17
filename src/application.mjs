@@ -7,6 +7,7 @@
  * All Rights Reserved.
  */
 
+import { All } from './all.mjs';
 import { Chaining } from './chaining.mjs';
 import { Promises } from './promises.mjs';
 
@@ -20,6 +21,7 @@ class Application {
     run() {
         new Promises().run();
         new Chaining().run();
+        new All().run();
     }
 }
 
