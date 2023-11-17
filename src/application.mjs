@@ -10,6 +10,7 @@
 import { All } from './all.mjs';
 import { Chaining } from './chaining.mjs';
 import { Promises } from './promises.mjs';
+import { Race } from './race.mjs';
 
 /**
  * The application class.
@@ -22,6 +23,7 @@ class Application {
         new Promises().run();
         new Chaining().run();
         new All().run();
+        new Race().run();
     }
 }
 
