@@ -17,8 +17,6 @@
 
 class Any {
     run() {
-        console.log('-- Any          --');
-
         this.allResolved();
         this.oneResolved();
         this.allRejected();

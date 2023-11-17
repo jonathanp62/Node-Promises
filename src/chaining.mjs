@@ -20,8 +20,6 @@ class Chaining {
      * The run method.
      */
     run() {
-        console.log('-- Chaining     --');
-
         this.basics();
         this.generatingNumbers();
         this.returnPromise();
@@ -36,13 +34,13 @@ class Chaining {
             }, 250);
         });
 
-        p.then(result => {          // result = 10
-            console.log(result);
+        p.then(result => {                                      // result = 10
+            console.log(`Chaining: ${result}`);
             return result * 2;
-        }).then(result => {         // result = 20
-            console.log(result);
+        }).then(result => {                                     // result = 20
+            console.log(`Chaining: ${result}`);
             return result * 3;
-        }).then(result => console.log(result)); // result = 60
+        }).then(result => console.log(`Chaining: ${result}`));  // result = 60
     }
 
     generatingNumbers() {
@@ -56,19 +54,19 @@ class Chaining {
 
         generateNumber(100)
             .then(result => {
-                console.log(result);                        // 100
+                console.log(`Chaining: ${result}`);                 // 100
                 return generateNumber(result * 2);
             })
             .then(result => {
-                console.log(result);                        // 200
+                console.log(`Chaining: ${result}`);                 // 200
                 return generateNumber(result * 3);
             })
-            .then(result => console.log(result));           // 600
+            .then(result => console.log(`Chaining: ${result}`));    // 600
     }
     returnPromise() {
         function getUser(userId) {
             return new Promise((resolve, reject) => {
-                console.log(`Getting user ${userId} from the database ...`);
+                console.log(`Chaining: Getting user ${userId} from the database ...`);
                 setTimeout(() => {
                     resolve({
                         userId: userId,
@@ -80,7 +78,7 @@ class Chaining {
 
         function getServices(user) {
             return new Promise((resolve, reject) => {
-                console.log(`Getting the services for user ${user.userName} from the API ...`);
+                console.log(`Chaining: Getting the services for user ${user.userName} from the API ...`);
                 setTimeout(() => {
                     resolve(['Email', 'VPN', 'CDN']);
                 }, 250);
@@ -89,7 +87,7 @@ class Chaining {
 
         function getServicesCost(services) {
             return new Promise((resolve, reject) => {
-                console.log(`Calculating the cost of services ${services} ...`);
+                console.log(`Chaining: Calculating the cost of services ${services} ...`);
                 setTimeout(() => {
                     resolve(services.length * 100);
                 }, 250);
@@ -99,7 +97,7 @@ class Chaining {
         getUser(100)
             .then(getServices)  // Same as result => getServices(result)
             .then(getServicesCost)
-            .then(console.log); // 300
+            .then(result => console.log(`Chaining: ${result}`)); // 300
     }
 }
 
