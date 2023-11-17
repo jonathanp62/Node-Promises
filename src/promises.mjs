@@ -19,8 +19,6 @@ class Promises {
      * The run method.
      */
     run() {
-        console.log('-- Introduction --');
-
         this.justResolved();
         this.resolvedAndReject()
     }
@@ -34,13 +32,13 @@ class Promises {
 
         // A more concise implementation
 
-        this.getUsersAlwaysOK().then((users) => {
-            console.log(users);
+        this.getUsersAlwaysOK().then(users => {
+            console.log('Promises1: ', users);
         });
 
         // Even more concise
 
-        this.getUsersAlwaysOK().then(users => console.log(users));
+        this.getUsersAlwaysOK().then(users => console.log('Promises2: ', users));
     }
 
     resolvedAndReject() {
@@ -55,22 +53,22 @@ class Promises {
         // More concise
 
         this.getUsers(false).then(
-            users => console.log(users),    // The resolved function
-            error => console.log(error)     // The rejected function
+            users => console.log('Promises3: ', users),    // The resolved function
+            error => console.log('Promises3: ', error)     // The rejected function
         );
 
         // Just get the error
         // The catch() method invokes then(undefined, onRejected)
 
-        this.getUsers(false).catch(error => console.log(error));
+        this.getUsers(false).catch(error => console.log('Promises4: ', error));
 
-        this.getUsers(true).then(users => console.log(users))
-            .catch(error => console.log(error))
-            .finally(() => console.log('Success finally!'));
+        this.getUsers(true).then(users => console.log('Promises5: ', users))
+            .catch(error => console.log('Promises5: ', error))
+            .finally(() => console.log('Promises5: Success finally!'));
 
-        this.getUsers(false).then(users => console.log(users))
-            .catch(error => console.log(error))
-            .finally(() => console.log('Failed finally!'));
+        this.getUsers(false).then(users => console.log('Promises6: ', users))
+            .catch(error => console.log('Promises6: ', error))
+            .finally(() => console.log('Promises6: Failed finally!'));
     }
 
     getUsersAlwaysOK() {
@@ -100,11 +98,11 @@ class Promises {
     }
 
     onResolved(users) {
-        console.log(users);
+        console.log('Promises7: ', users);
     }
 
     onRejected(error) {
-        console.log(error);
+        console.log('Promises8: ', error);
     }
 }
 
