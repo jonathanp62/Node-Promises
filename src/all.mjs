@@ -20,8 +20,6 @@ class All {
      * The run method.
      */
     run() {
-        console.log('-- All          --');
-
         this.resolved();
         this.rejected();
     }
@@ -29,21 +27,21 @@ class All {
     resolved() {
         const p1 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('The first promise has resolved to 10');
+                console.log('All: The first promise has resolved to 10');
                 resolve(10);
             }, 1 * 150);
         });
 
         const p2 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('The second promise has resolved to 20');
+                console.log('All: The second promise has resolved to 20');
                 resolve(20);
             }, 2 * 150);
         });
 
         const p3 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('The third promise has resolved to 30');
+                console.log('All: The third promise has resolved to 30');
                 resolve(30);
             }, 3 * 150);
         });
@@ -51,29 +49,29 @@ class All {
         Promise.all([p1, p2, p3]).then((results) => {
             const total = results.reduce((p, c) => p + c);
 
-            console.log(`Results: ${results}`); // 10,20,30
-            console.log(`Total  : ${total}`);     // 60
+            console.log(`All: Results: ${results}`); // 10,20,30
+            console.log(`All: Total  : ${total}`);     // 60
         });
     }
 
     rejected() {
         const p1 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('The first promise has resolved to 11');
+                console.log('All: The first promise has resolved to 11');
                 resolve(11);
             }, 1 * 150);
         });
 
         const p2 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('The second promise has rejected');
+                console.log('All: The second promise has rejected');
                 reject('Failed');
             }, 2 * 150);
         });
 
         const p3 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('The third promise has resolved to 33');
+                console.log('All: The third promise has resolved to 33');
                 resolve(33);
             }, 3 * 150);
         });
