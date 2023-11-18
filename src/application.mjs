@@ -8,6 +8,7 @@
  */
 
 import { All } from './all.mjs';
+import { AllSettled } from './all-settled.mjs';
 import { Any } from './any.mjs';
 import { Chaining } from './chaining.mjs';
 import { Promises } from './promises.mjs';
@@ -26,6 +27,7 @@ class Application {
         new All().run();
         new Race().run();
         new Any().run();
+        new AllSettled().run();
     }
 }
 
