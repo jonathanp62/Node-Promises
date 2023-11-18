@@ -10,6 +10,7 @@
 import { All } from './all.mjs';
 import { AllSettled } from './all-settled.mjs';
 import { Any } from './any.mjs';
+import { AwaitAsync } from './await-async.mjs';
 import { Chaining } from './chaining.mjs';
 import { ErrorHandling } from './error-handling.mjs';
 import { Finally } from './finally.mjs';
@@ -32,6 +33,7 @@ class Application {
         new AllSettled().run();
         new Finally().run();
         new ErrorHandling().run();
+        new AwaitAsync().run();
     }
 }
 
