@@ -65,7 +65,7 @@ class All {
         const p2 = new Promise((resolve, reject) => {
             setTimeout(() => {
                 console.log('All: The second promise has rejected');
-                reject('Failed');
+                reject('All: Failed');
             }, 2 * 150);
         });
 

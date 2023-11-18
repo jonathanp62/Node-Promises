@@ -8,9 +8,7 @@
  */
 
 /**
- * The promise class' finally() static method. Note
- * that setTimeout is used to simulate asynchronous
- * execution.
+ * The promise class' finally() method.
  *
  * See: https://www.javascripttutorial.net/es6/javascript-promise-finally/
  */

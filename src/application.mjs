@@ -11,6 +11,7 @@ import { All } from './all.mjs';
 import { AllSettled } from './all-settled.mjs';
 import { Any } from './any.mjs';
 import { Chaining } from './chaining.mjs';
+import { ErrorHandling } from './error-handling.mjs';
 import { Finally } from './finally.mjs';
 import { Promises } from './promises.mjs';
 import { Race } from './race.mjs';
@@ -30,6 +31,7 @@ class Application {
         new Any().run();
         new AllSettled().run();
         new Finally().run();
+        new ErrorHandling().run();
     }
 }
 
