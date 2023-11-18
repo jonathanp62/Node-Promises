@@ -37,7 +37,7 @@ class AllSettled {
 
         Promise.allSettled([p1, p2])
             .then((result) => {
-                console.log(result);
+                console.log('AllSettled: ', result);
             });
     }
 }
